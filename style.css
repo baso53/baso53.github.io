@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: #202020;
+    font-family: 'Lato', sans-serif;
+}
+
+#head-container{
+    width: 50%;
+    margin: 0 auto;
+}
+
+h1{
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 56px;
+    color: #EEEEEE;
+    margin-top: 300px;
+	cursor: default;
+}
+
+h2{
+    text-align: right;
+    text-transform: uppercase;
+    font-size: 30px;
+    color: #EEEEEE;
+	cursor: default;
+}
+
+ul{
+    list-style-type: none;
+    height: 60px;
+    background: #EEEEEE;
+}
+
+li{
+    float: left;
+    width: 25%;
+    text-align: center;
+    line-height: 60px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: all 0.2s ease-out;
+}
+
+li:hover{
+}
+
+a{
+    display: block;
+    color: #202020;
+    text-decoration: none;
+    transition: all 0.2s ease-out;
+}
+
+a:hover{
+    color: #006699;
+}
