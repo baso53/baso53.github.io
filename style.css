@@ -54,7 +54,6 @@ a{
     text-decoration: none;
     transition: all 0.2s ease-out;
 }
-
 a:hover{
     color: #006699;
 }
