@@ -48,9 +48,6 @@ li{
     margin-right: 0.1%;
     margin-bottom: 0.1%;
 }
-li:last-child{
-    width: 99.9%;
-}
 
 a{
     display: block;

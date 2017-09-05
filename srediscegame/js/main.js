@@ -1,7 +1,7 @@
 var balls = new Group();
 var bullets = new Group();
 var gameOver = false;
-var ballRadius = 25;
+var ballRadius = 50;
 
 //GENERATE HELP TEXT AND TRADEMARK
 new PointText({
@@ -25,7 +25,7 @@ rocket.velocity = new Point(0, 0);
 
 //INITIALIZE BALLS
 function init() {
-    for (var i = 0; i < 40; i++) {
+    for (var i = 0; i < 15; i++) {
         generateBall();
     }
 };
@@ -45,7 +45,7 @@ function generateBall() {
 
     //GENERATE BALL OBJECT
     var ball = new Raster(
-        String(Math.floor((Math.random() * 18)) + 1),
+        String(Math.floor((Math.random() * 19)) + 1),
         possiblePoint
     );
     ball.velocity = new Point.random() * 16 - 8;
@@ -53,15 +53,13 @@ function generateBall() {
 
     //ADD TO BALLS GROUP ITEM
     balls.addChild(ball);
-
-    console.log(ball.size);
 };
 
 //GENERATE A BULLET
 function generateBullet() {
     var bullet = new Path.Circle({
         center: rocket.position,
-        radius: 2,
+        radius: 3,
         fillColor: "red"
     });
     bullet.velocity = new Point(
@@ -69,6 +67,7 @@ function generateBullet() {
         Math.cos((rocket.rotation / 180) * Math.PI) * 10
     );
 
+    //ADD BULLETS TO GROUP ITEM
     bullets.addChild(bullet);
 }
 
@@ -99,9 +98,9 @@ function isHit(ball, index) {
 //UPDATE BALLS AND CHECK IF HIT
 function updateBalls() {
     balls.children.forEach(function (ball, index) {
-        ball.setPosition(ball.position + ball.velocity);
         isCollided(ball);
         isHit(ball, index);
+        ball.setPosition(ball.position + ball.velocity);
     });
 }
 
@@ -138,12 +137,12 @@ function checkInput(){
 //CHECK IF GAME IS OVER
 function isOver(){
     if (!balls.hasChildren() && !gameOver) {
-        var text = new PointText({
+        new PointText({
             point: view.center,
             justification: 'center',
             fontSize: 70,
             fillColor: 'white',
-            content: "Bravo majmune jesi pobedio?"
+            content: "Bravo majstore"
         });
         gameOver = true;
         return gameOver;
