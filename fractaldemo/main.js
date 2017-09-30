@@ -3,10 +3,10 @@ var selectedPoint, rotation, length;
 function updateText(){
     new PointText({
         fontFamily: "sans-serif",
-        fontSize: 28,
+        fontSize: 22,
         fillColor: "black",
-        content: "Move mouse horizontally to adjust angle, vertically to adjust size",
-        point: [70, 100]
+        content: "Move mouse horizontally\nto adjust angle,\nvertically to adjust size",
+        point: [50, 70]
     });
     new PointText({
         fontFamily: "sans-serif",

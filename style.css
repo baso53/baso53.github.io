@@ -49,6 +49,10 @@ li{
     margin-bottom: 0.1%;
 }
 
+li:nth-child(odd):last-child{
+    width: 100%;
+}
+
 a{
     display: block;
     color: #202020;
