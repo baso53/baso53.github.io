@@ -62,3 +62,21 @@ a{
 a:hover{
     color: #006699;
 }
+
+@media screen and (max-device-width: 400px){
+    #head-container{
+        width: 100%;
+        margin: auto 10px;
+    }
+    h1{
+        font-size: 7em;
+        margin-top: 50px;
+    }
+    h2{
+        font-size: 3em;
+    }
+    li{
+        font-size: 3em;
+        line-height: 4em;
+    }
+}
