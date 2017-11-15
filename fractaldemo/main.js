@@ -4,14 +4,14 @@ function updateText(){
     new PointText({
         fontFamily: "sans-serif",
         fontSize: 22,
-        fillColor: "black",
+        fillColor: "white",
         content: "Move mouse horizontally\nto adjust angle,\nvertically to adjust size",
         point: [50, 70]
     });
     new PointText({
         fontFamily: "sans-serif",
         fontSize: 16,
-        fillColor: "black",
+        fillColor: "white",
         content: "by Sebastijan Grabar",
         point: [view.size.width - 200, view.size.height - 20]
     });
@@ -24,7 +24,7 @@ function branchLine (startPoint, length, currentAngle, rotation, _strokeWidth){
             Math.sin(currentAngle),
             Math.cos(currentAngle)
         ) * length,
-        strokeColor: "black",
+        strokeColor: "#5C821A",
         strokeWidth: _strokeWidth
     });
 

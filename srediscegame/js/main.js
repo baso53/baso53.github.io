@@ -7,14 +7,14 @@ var ballRadius = 50;
 new PointText({
     fontFamily: "sans-serif",
     fontSize: 28,
-    fillColor: "black",
+    fillColor: "white",
     content: "Use arrow keys to move, space to shoot",
     point: [70, 100]
 });
 new PointText({
     fontFamily: "sans-serif",
     fontSize: 16,
-    fillColor: "black",
+    fillColor: "white",
     content: "by Sebastijan Grabar",
     point: [view.size.width - 200, view.size.height - 20]
 });
