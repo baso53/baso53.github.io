@@ -4,7 +4,7 @@ var numberOfDisks;
 var diskHeight = view.size.height / 24 - 1;
 var diskWidth = view.size.width / 3.9;
 var selected = null;
-
+var automaticallySolvable = true;
 
 Array.prototype.last = function () {
     if (this.length === 0) {
@@ -13,7 +13,7 @@ Array.prototype.last = function () {
     return this[this.length - 1];
 }
 
-var text = new PointText({
+var welcomeText = new PointText({
     point: [view.size.width / 20, view.size.height / 20],
     content: "Welcome to Towers of Hanoi puzzle game!",
     fillColor: "#CDCDC0",
@@ -21,6 +21,13 @@ var text = new PointText({
     fontSize: view.size.width / 50
 });
 
+var solveHanoiButton = new PointText({
+    point: [view.size.width / 20, view.size.height / 20 + welcomeText.fontSize * 2],
+    content: "SOLVE =>",
+    fillColor: "#86AC41",
+    fontFamily: "sans-serif",
+    fontSize: view.size.width / 35
+});
 
 var copyrightText = new PointText({
     point: [view.size.width - view.size.width / 5, view.size.height / 20],
@@ -30,16 +37,9 @@ var copyrightText = new PointText({
     fontSize: view.size.width / 70
 });
 
-var solveHanoiButton = new PointText({
-    point: [view.size.width / 20, view.size.height / 20 + text.fontSize * 2],
-    content: "Press [ME] to solve automatically!",
-    fillColor: "#CDCDC0",
-    fontFamily: "sans-serif",
-    fontSize: view.size.width / 50
-});
 solveHanoiButton.onMouseUp = function () {
     solveHanoi(numberOfDisks, towers[0], towers[2], towers[1]);
-    text.content = "You have (not actually) solved the puzzle! Congratulations!"
+    welcomeText.content = "You have (not actually) solved the puzzle! Congratulations!"
 }
 
 var initTowers = function () {
@@ -72,21 +72,21 @@ var initDisks = function () {
         }));
         diskWidth -= view.size.width / 70;
     }
+
+    //ADD LISTENERS FOR EVERY TOWER
+    towers.forEach(function (tower) {
+        tower.onMouseUp = function () {
+            moveDisk(tower, false);
+        }
+    });
 }
 
 initTowers();
 initDisks();
 
-//ADD LISTENERS FOR EVERY TOWER
-towers.forEach(function (tower) {
-    tower.onMouseUp = function () {
-        moveDisk(tower, false);
-    }
-});
-
 var checkIfGameOver = function () {
     if (towers[0].stack.length === 0 && towers[1].stack.length === 0 && selected === null) {
-        text.content = "You have solved the puzzle! Congratulations!";
+        welcomeText.content = "You have solved the puzzle! Congratulations!";
     }
 }
 
@@ -119,15 +119,15 @@ var selectDisk = function (tower, automatic) {
     if (selected === null) {
         selected = tower.stack.pop();
         if (automatic) {
-            drawOrder.push({ selected: selected, position: [tower.x, view.size.height / 2 - diskHeight*3] });
+            drawOrder.push({ selected: selected, position: [tower.x, view.size.height / 2 - diskHeight * 3] });
         } else {
-            selected.position = [tower.x, view.size.height / 2 - diskHeight*3];
+            selected.position = [tower.x, view.size.height / 2 - diskHeight * 3];
+
         }
     }
 }
 
-
-var solve = function (source, dest) {
+var solveOne = function (source, dest) {
     selectDisk(source, true);
     moveDisk(dest, true);
 
@@ -146,7 +146,7 @@ var solve = function (source, dest) {
 var solveHanoi = function (disk, source, dest, aux) {
     if (disk >= 1) {
         solveHanoi(disk - 1, source, aux, dest);
-        solve(source, dest);
+        solveOne(source, dest);
         solveHanoi(disk - 1, aux, dest, source);
     }
     solveHanoiButton.onMouseUp = null;
