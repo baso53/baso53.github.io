@@ -1,8 +1,8 @@
 var towers = [];
 var drawOrder = [];
 var numberOfDisks;
-var diskHeight = view.size.height / 20;
-var diskWidth = view.size.width / 4;
+var diskHeight = view.size.height / 27;
+var diskWidth = view.size.width / 3.9;
 var selected = null;
 
 
@@ -36,7 +36,7 @@ var initTowers = function () {
     for (var i = 0; i < 3; i++) {
         towers.push(new Path.Line({
             from: [view.size.width / 4 * (i + 1), view.size.height],
-            to: [view.size.width / 4 * (i + 1), view.size.height / 2.5],
+            to: [view.size.width / 4 * (i + 1), view.size.height / 3],
             strokeColor: '#86AC41',
             strokeWidth: 20
         }));
@@ -48,11 +48,11 @@ var initTowers = function () {
 
 var initDisks = function () {
     do {
-        numberOfDisks = prompt("How many disks do you want to play with (between 2 and 10), default is 4");
+        numberOfDisks = prompt("How many disks do you want to play with (between 2 and 16), default is 4");
         if (!numberOfDisks) {
             numberOfDisks = 4;
         }
-    } while (numberOfDisks > 10 || numberOfDisks <= 1);
+    } while (numberOfDisks > 16 || numberOfDisks <= 1);
 
     for (var i = 0; i < numberOfDisks; i++) {
         towers[0].stack.push(new Path.Line({
@@ -61,7 +61,7 @@ var initDisks = function () {
             strokeColor: "#7DA3A1",
             strokeWidth: diskHeight
         }));
-        diskWidth -= view.size.width / 45;
+        diskWidth -= view.size.width / 70;
     }
 }
 
@@ -124,14 +124,17 @@ var solve = function (source, dest) {
     selectDisk(source, true);
     moveDisk(dest, true);
 
-    var i=0;
-    var interval = setInterval (function(){
-        drawOrder[i].selected.position = drawOrder[i].position;
-        i++;
-        if (i === (Math.pow(2, numberOfDisks) - 1)*2){
-            clearInterval(interval);
-        }
-    }, 250);
+    if (drawOrder.length === (Math.pow(2, numberOfDisks) - 1)*2) {
+        var i=0;
+        var interval = setInterval (function(){
+            drawOrder[i].selected.position = drawOrder[i].position;
+            i++;
+            if (i === (Math.pow(2, numberOfDisks) - 1)*2){
+                clearInterval(interval);
+            }
+        }, 120);
+    }
+    
 }
 
 var solveHanoi = function (disk, source, dest, aux) {
