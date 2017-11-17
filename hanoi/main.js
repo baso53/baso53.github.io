@@ -139,7 +139,7 @@ var solveOne = function (source, dest) {
             if (i === (Math.pow(2, numberOfDisks) - 1) * 2) {
                 clearInterval(interval);
             }
-        }, 150);
+        }, 300);
     }
 }
 
