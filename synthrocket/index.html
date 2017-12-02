@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SynthRocket Alpha v0.01</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Sebastijan Grabar">
+    <meta name="keywords" content="Sebastijan, Grabar, Portfolio, JavaScript, paper.js, game">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="icon" href="../favicon.png" type="image/png">
+    <script type="text/javascript" src="js/paper-full.min.js"></script>
+    <script type="text/javascript" src="js/howler.min.js"></script>
+</head>
+
+<body>
+    <svg src="svg/raketa1.svg" id="raketa1" style="display: none"></svg>
+    <div id="startGame" onClick="initialize()">START GAME</div>
+    <script>
+        window.onkeyup = function(key) {
+            if (key.keyCode == 32 || key.keyCode == 13){
+                initialize();
+                window.onkeyup = null;
+            }
+        }
+        function initialize() {
+            var script = document.createElement('script');
+            script.setAttribute('type', 'text/javascript');
+            script.setAttribute('src', 'js/paper-full.min.js');
+            document.body.appendChild(script);
+            var script = document.createElement('script');
+            script.setAttribute('type', 'text/paperscript');
+            script.setAttribute('src', 'js/main.js');
+            script.setAttribute('canvas', 'myCanvas');
+            document.body.appendChild(script);
+        }
+    </script>
+    <div class="banner" id="left">Objective is to shoot as many balls you can without dying. Use SPACE to shoot, ARROW KEYS to move.</div>
+    <div class="banner" id="right">Programming, music and assets by Sebastijan Grabar. Made with Paper.js&nbsp;</div>
+    <canvas id="myCanvas"></canvas>
+</body>
+
+</html>
