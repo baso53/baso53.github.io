@@ -89,17 +89,25 @@ function isCollided(ball) {
 };
 
 //CHECK IF BALL IS HIT
-function isHit(ball, index) {
-    if (ball.intersects(bullets)) {
-        balls.removeChildren(index, index + 1);
+function isDead (p1, p2){
+    var distance = p1.position.getDistance(p2.position);
+    if (distance <= 50) {
+        return true;
     }
 }
 
 //UPDATE BALLS AND CHECK IF HIT
 function updateBalls() {
-    balls.children.forEach(function (ball, index) {
+    balls.children.forEach(function (ball, index1) {
         isCollided(ball);
-        isHit(ball, index);
+
+        bullets.children.forEach(function(bullet, index2){
+            if (isDead(ball, bullet)){
+                balls.removeChildren(index1, index1 + 1);
+                bullets.removeChildren(index2, index2 + 1);
+            }
+        })
+
         ball.setPosition(ball.position + ball.velocity);
     });
 }
