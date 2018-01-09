@@ -34,7 +34,7 @@ function branchLine (startPoint, length, currentAngle, rotation, _strokeWidth){
     }
 }
 
-
+//redraw
 function onMouseMove(event){
     selectedPoint = event.point / view.size;
     rotation = selectedPoint.x*2.5 + 0.1;
