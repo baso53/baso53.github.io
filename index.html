@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
 <head>
-	<title>Welcome to Sebastijan Grabar's Portfolio - Inner Heaven</title>
+	<title>Welcome to Inner Heaven</title>
 	<meta charset="utf-8">
-	<meta name="description" content="Portfolio website for Sebastijan Grabar. It contains various works such as JavaScript apps, static web pages and Youtube videos">
+	<meta name="description" content="Portfolio website by Sebastijan Grabar. It contains various works such as JavaScript apps, static web pages and Youtube videos.">
 	<meta name="author" content="Sebastijan Grabar">
-	<meta name="keywords" content="Sebastijan, Grabar, portfolio, JavaScript, HTML">
+	<meta name="keywords" content="Sebastijan, Grabar, portfolio, JavaScript, HTML, frameworks">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 	<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
@@ -16,10 +16,29 @@
 	<header>
 		<h1>Welcome to Inner Heaven</h1>
 		<h2>Disclaimer: all projects were made purely for fun</h2>
+		
+		<h3 id="show"><span id="about">About Me</span></h3>
 	</header>
 
-
 	<ul>
+		<li>
+			<a href="#" onClick="return false;" id="hiddeable">
+				<div id="about-text">
+					Hello! My Name is Sebastijan Grabar!
+					<br> I'm a 20-year-old student and developer from Croatia with big love for modern Javascript.
+					<br> <br> Learning new technologies through side projects is one of the things I absolutely love
+					to do, most of which you can find below. On the other hand, I have a strong opinion that concepts are more important
+					than concrete technologies.
+
+					<br> <br> I also know some C#, Java, C, C++, all of which I wish to get better at in the near future.
+
+					<br> <br> You can also find a link to my Youtube channel where I (sometimes) put up guitar covers or my own music. 
+					Playing the guitar is my main tool for relaxation :)
+				</div>
+			</a>
+		</li>
+
+		<li><a href="https://github.com/baso53/SocketIOChatClient"><i class="fas fa-comments"></i>Socket IO Chat Client (Windows)</a></li>
 		<li><a href="synthrocket/index.html"><i class="fas fa-rocket"></i>SynthRocket Alpha v0.01</a></li>
 		<li><a href="srediscegame/index.html"><i class="far fa-user-circle"></i>People of Sredisce Game</a></li>
 		<li><a href="colorgame/colorgame.html"><i class="fas fa-desktop"></i>The Magnificent RGB color game</a></li>
@@ -27,12 +46,26 @@
 		<li><a href="fractaldemo/index.html"><i class="fas fa-tree"></i>Fractal demo</a></li>
 		<li><a href="menze/menze.html"><i class="fas fa-utensils"></i>Menze ZG</a></li>
 		<li><a href="10print/index.html"><i>//\\/</i>10 print clone</a></li>
-		<li><a href="knight_studios/knight.html"><i class="fas fa-columns"></i>Static website example</a></li>
 		<li><a href="https://www.youtube.com/baso53"><i class="fab fa-youtube"></i>Youtube Channel</a></li>
 		<li><a href="https://github.com/baso53"><i class="fab fa-github"></i>Github</a></li>
+
 	</ul>
 
 	<footer>
 		<div id="footer-right">by Sebastijan Grabar // 2018</div>
 	</footer>
+
+	<script>
+		let button = document.getElementById("show");
+		let hiddeableText = document.getElementById("hiddeable");
+		hiddeableText.classList.add("remove-height");
+		button.onclick = () => {
+			console.log(hiddeableText.classList["remove-height"]);
+			if (hiddeableText.classList.contains("remove-height")){
+				hiddeableText.classList.remove("remove-height");
+			} else{
+				hiddeableText.classList.add("remove-height");
+			}
+		};
+	</script>
 </body>

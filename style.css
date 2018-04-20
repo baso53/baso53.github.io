@@ -24,6 +24,26 @@ h2{
     text-align: left;
     font-size: 1.2em;
     margin-left: 2%;
+    clear: both;
+}
+
+h3#show{
+    text-align: right;
+    padding: 3px;
+}
+
+span#about {
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 7%;
+    background: #1f1f1f;
+    color: #d8c600;
+    transition: color 0.6s, background 0.3s;
+}
+
+span#about:hover{
+    background: #d8c600;
+    color: #1f1f1f;
 }
 
 ul{
@@ -46,7 +66,7 @@ a{
     height: 450px;
     color: #d8c600;
     border-top: 1px solid #d8c600;
-    transition: all 0.2s;
+    transition: all 0.3s;
 }
 a:hover{
     background: #111111;
@@ -89,4 +109,17 @@ footer{
         margin-bottom: 40px;
         font-size: 3em;
     }
+}
+
+#about-text{
+    font-size: 0.5em;
+    width: 60%;
+    margin: 0% 20%;
+    line-height: 1.5em;
+}
+
+
+.remove-height{
+    height: 0px;
+    visibility: hidden;
 }
