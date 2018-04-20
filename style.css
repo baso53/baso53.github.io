@@ -126,6 +126,7 @@ footer{
 
 
 .remove-height{
-    height: 0px;
+    overflow: hidden;
     visibility: hidden;
+    height: 0px;
 }

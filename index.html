@@ -58,7 +58,9 @@
 	<script>
 		let button = document.getElementById("show");
 		let hiddeableText = document.getElementById("hiddeable");
+
 		hiddeableText.classList.add("remove-height");
+		
 		button.onclick = () => {
 			if (hiddeableText.classList.contains("remove-height")){
 				hiddeableText.classList.remove("remove-height");
