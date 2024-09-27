@@ -1,72 +1,151 @@
-<!DOCTYPE html>
+<!--
+  This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+  If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+  
+  Project: Back Of Your Hand (https://backofyourhand.com)
+  Repository: https://github.com/adam-lynch/back-of-your-hand
+  Copyright © 2024 Adam Lynch (https://adamlynch.com)
+-->
 
-<head>
-	<title>Welcome to Inner Heaven</title>
-	<meta charset="utf-8">
-	<meta name="description" content="Portfolio website by Sebastijan Grabar. It contains various works such as JavaScript apps, static web pages and Youtube videos.">
-	<meta name="author" content="Sebastijan Grabar">
-	<meta name="keywords" content="Sebastijan, Grabar, portfolio, JavaScript, HTML, frameworks">
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-	<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-	<link rel="icon" href="favicon.png" type="image/png">
-</head>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="How well do you know your area? Test your knowledge by locating streets on a map."
+    />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1"
+    />
 
-<body>
-	<header>
-		<h1>Welcome to Inner Heaven</h1>
-		<h2>Disclaimer: all projects were made purely for fun</h2>
-		
-		<h3 id="show"><span id="about">About Me</span></h3>
-	</header>
+    <title>Back Of Your Hand</title>
 
-	<ul>
-		<li>
-			<a href="#" onClick="return false;" id="hiddeable">
-				<div id="about-text">
-					Hello! My Name is Sebastijan Grabar!
-					<br> I'm a 20-year-old student and developer from Croatia with big love for modern Javascript.
-					<br> <br> Learning new technologies through side projects is one of the things I absolutely love
-					to do, most of which you can find below. On the other hand, I have a strong opinion that concepts are more important
-					than concrete technologies.
+    <!-- Preloading, etc. -->
+    <link
+      rel="dns-prefetch"
+      href="https://www.overpass.de/"
+    />
+    <link
+      rel="canonical"
+      href="https://backofyourhand.com/game"
+    />
 
-					<br> <br> I also know some C#, Java, C, C++, all of which I wish to get better at in the near future.
+    <!-- Assets -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/favicon.png"
+    />
 
-					<br> <br> You can also find a link to my Youtube channel where I (sometimes) put up guitar covers or my own music. 
-					Playing the guitar is my main tool for relaxation :)
-				</div>
-			</a>
-		</li>
+    <!-- PWA stuff -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/apple-touch-icon.png"
+    />
+    <link
+      rel="manifest"
+      href="/manifest.webmanifest"
+    />
+    <meta
+      name="theme-color"
+      content="#df206f"
+    />
 
-		<li><a href="https://github.com/baso53/SocketIOChatClient"><i class="fas fa-comments"></i>Socket IO Chat Client (Windows)</a></li>
-		<li><a href="synthrocket/index.html"><i class="fas fa-rocket"></i>SynthRocket Alpha v0.01</a></li>
-		<li><a href="srediscegame/index.html"><i class="far fa-user-circle"></i>People of Sredisce Game</a></li>
-		<li><a href="colorgame/colorgame.html"><i class="fas fa-desktop"></i>The Magnificent RGB color game</a></li>
-		<li><a href="hanoi/index.html"><i class="fas fa-bars"></i>Towers of Hanoi</a></li>
-		<li><a href="fractaldemo/index.html"><i class="fas fa-tree"></i>Fractal demo</a></li>
-		<li><a href="menze/menze.html"><i class="fas fa-utensils"></i>Menze ZG</a></li>
-		<li><a href="10print/index.html"><i>//\\/</i>10 print clone</a></li>
-		<li><a href="https://www.youtube.com/baso53"><i class="fab fa-youtube"></i>Youtube Channel</a></li>
-		<li><a href="https://github.com/baso53"><i class="fab fa-github"></i>Github</a></li>
+    <meta
+      property="title"
+      content="Back Of Your Hand"
+    />
+    <meta
+      property="description"
+      content="How well do you know your area? Test your knowledge by locating streets on a map."
+    />
+    <!-- Social media / sharing stuff -->
+    <meta
+      property="og:title"
+      content="Back Of Your Hand"
+    />
+    <meta
+      property="og:description"
+      content="How well do you know your area? Test your knowledge by locating streets on a map."
+    />
+    <meta
+      property="og:image"
+      content="https://backofyourhand.com/images/social-screenshot.png?x"
+    />
+    <meta
+      property="og:url"
+      content="https://backofyourhand.com"
+    />
+    <meta
+      name="twitter:card"
+      content="summary_large_image"
+    />
+    <!--  Non-essential, but recommended -->
+    <meta
+      name="image"
+      content="/images/social-screenshot.png?y"
+    />
+    <meta
+      property="og:site_name"
+      content="Back of Your Hand"
+    />
+    <meta
+      property="og:image:width"
+      content="1200"
+    />
+    <meta
+      property="og:image:width"
+      content="630"
+    />
+    <meta
+      name="twitter:image"
+      content="https://backofyourhand.com/images/social-screenshot.png?z"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Screenshot of the game; on the left-hand side, the user is given a street name to find. The map is on the right-side, where a marker / guess has been placed by the user"
+    />
+    <meta
+      name="twitter:creator"
+      content="@lynchy010"
+    />
+    <meta
+      name="twitter:site"
+      content="@lynchy010"
+    />
+    <script type="module" crossorigin src="/assets/index-cQ9Fogww.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CY7V6aSr.css">
+  </head>
 
-	</ul>
+  <body>
+    <noscript>
+      <div class="full-screen-display">
+        <div class="full-screen-display__inner">
+          <h1>JavaScript disabled</h1>
+          <p>
+            I'm afraid you need JavaScript to play this game. Sorry about that!
+          </p>
+          <p><a href="/learn-more">Learn more</a> about the game in general</p>
+          <img
+            class="hide-accessibly"
+            src="https://count.backofyourhand.com/count?p=/noscript"
+          />
+        </div>
+      </div>
+    </noscript>
 
-	<footer>
-		<div id="footer-right">by Sebastijan Grabar // 2018</div>
-	</footer>
 
-	<script>
-		let button = document.getElementById("show");
-		let hiddeableText = document.getElementById("hiddeable");
-
-		hiddeableText.classList.add("remove-height");
-		
-		button.onclick = () => {
-			if (hiddeableText.classList.contains("remove-height")){
-				hiddeableText.classList.remove("remove-height");
-			} else{
-				hiddeableText.classList.add("remove-height");
-			}
-		};
-	</script>
-</body>
+    <script>
+      if (
+        "production" === "production" &&
+        navigator.serviceWorker &&
+        !navigator.serviceWorker.controller
+      ) {
+        navigator.serviceWorker.register("/serviceworker.js");
+      }
+    </script>
+  </body>
+</html>
