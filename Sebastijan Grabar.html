@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Responsive Gallery</title>
+  <style>
+    /* 1) RESET + NO-SCROLL ON DESKTOP */
+    * { box-sizing: border-box; margin: 0; padding: 0 }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;           /* kill scrollbars at large */
+    }
+
+    /* 2) BASE GALLERY: 3-col desktop, white “border” via gap */
+    .gallery {
+      display: grid;
+      width: 100vw;
+      height: 100vh;
+      background: #fff;           /* white shows through the gaps */
+      gap: 8px;                   /* uniform “border” around each img */
+
+      grid-template-columns: 1.64fr 1fr 1fr;
+      grid-template-rows: repeat(3, 1fr);
+    }
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* place them by class for desktop */
+    .img-big   { grid-column: 1;       grid-row: 1 / span 3; }
+    .img-c2-r1 { grid-column: 2;       grid-row: 1; }
+    .img-c2-r2 { grid-column: 2;       grid-row: 2; }
+    .img-c2-r3 { grid-column: 2;       grid-row: 3; }
+    .img-c3-r1 { grid-column: 3;       grid-row: 1; }
+    .img-c3-r2 { grid-column: 3;       grid-row: 2; }
+    .img-c3-r3 { grid-column: 3;       grid-row: 3; }
+
+    /* 3) TABLET: MAIN HERO FULL-SCREEN, 2-COL THUMBS BELOW */
+    @media (max-width: 1024px) {
+      /* re-enable vertical scroll for the page */
+      html, body {
+        height: auto;
+        overflow: auto;
+      }
+
+      .gallery {
+        /* 2 cols */
+        grid-template-columns: 1fr 1fr;
+        /* 1st row is hero at 100vh, then 3 rows for 6 thumbs */
+        grid-template-rows: 100vh repeat(3, 1fr);
+      }
+
+      /* hero spans both columns, row 1 */
+      .img-big {
+        grid-column: 1 / 3;
+        grid-row: 1;
+        height: 100vh;           /* fills viewport height */
+      }
+
+      /* thumbs: assign them into the 2×3 grid below */
+      .img-c2-r1 { grid-column: 1; grid-row: 2; }
+      .img-c2-r2 { grid-column: 1; grid-row: 3; }
+      .img-c2-r3 { grid-column: 1; grid-row: 4; }
+      .img-c3-r1 { grid-column: 2; grid-row: 2; }
+      .img-c3-r2 { grid-column: 2; grid-row: 3; }
+      .img-c3-r3 { grid-column: 2; grid-row: 4; }
+    }
+
+    /* 4) MOBILE: SINGLE-COLUMN STACK */
+    @media (max-width: 600px) {
+      .gallery {
+        display: block;
+        background: #fff;
+        padding: 8px;
+      }
+      .gallery img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="gallery">
+    <img class="img-big"   src="./assets/820ead1b2f7ee4d9f724e87a618e0bb5.jpg" alt="">
+    <img class="img-c2-r1" src="./assets/d84d74dc4dab09da16f1f3e4a6de8e1f.jpg" alt="">
+    <img class="img-c2-r2" src="./assets/5745815c7111fbcb32a5e3d9b49ce2fa.jpg" alt="">
+    <img class="img-c2-r3" src="./assets/6e7efaa3799456d67848d5e3745ee2c9.jpg" alt="">
+    <img class="img-c3-r1" src="./assets/386b5b26d6ac128252ea6b0f8af0dad4.jpg" alt="">
+    <img class="img-c3-r2" src="./assets/a43ad14906156c1c3339d8b7680d5e96.jpg" alt="">
+    <img class="img-c3-r3" src="./assets/35cdfb8c0d6739597e8061f70b44bb12.jpg" alt="">
+  </div>
+</body>
+</html>
