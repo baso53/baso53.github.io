@@ -216,19 +216,16 @@
       color: #2D2D2D;
     }
 
-    /* new: a wrapper for your two svgs */
+    /* .svg-row as a horizontal list of SVGs that wraps if not enough space */
     .page-3 .svg-row {
       display: flex;
       flex-direction: row;
       justify-content: center;
-      /* center them horizontally */
       align-items: center;
       gap: 1rem;
-      /* space between the two SVGs */
-      flex-wrap: nowrap;
-      /* never wrap onto a second line */
+      flex-wrap: wrap;
+      /* <-- Allow SVGs to wrap under each other */
       margin-bottom: 1rem;
-      /* space between SVG-row and link */
     }
 
     /* style for the link */
@@ -246,7 +243,8 @@
     }
 
     .page-3 .svg-logo {
-      height: 12rem;
+      min-width: 10rem;
+      flex: 1 1 10rem;
     }
   </style>
 </head>
