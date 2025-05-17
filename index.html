@@ -238,7 +238,7 @@
     <h2>Tour Guide</h2>
 
     <!-- 3) duplicate the same SVG here -->
-    <svg class="svg-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 145">
+    <svg class="svg-logo" viewBox="0 0 180 145" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <style>
           .top {
@@ -246,15 +246,18 @@
             font-size: 21px;
           }
         </style>
-        <path id="curveA" d="M20 50 C60 30,120 40,160 100" fill="none" />
+
+        <!-- duplicate path shifted down 10px -->
         <path id="curveB" d="M15 80 C60 60,120 70,160 150" fill="none" />
       </defs>
+
       <path d="M20 50 C60 30,120 40,160 100" fill="none" stroke="#ff6f00" stroke-width="4" stroke-dasharray="6 8" />
+
+      <!-- text rides along the lowered curveB -->
       <text class="top">
-        <textPath fill="#2D2D2D" href="#curveB">
-          Lead&nbsp;the&nbsp;Way
-        </textPath>
+        <textPath fill="#2D2D2D" href="#curveB">Lead the Way</textPath>
       </text>
+
       <circle cx="160" cy="100" r="14" fill="#ff6f00" />
       <circle cx="160" cy="100" r="5" fill="#ffffff" />
     </svg>
@@ -275,7 +278,8 @@
 
   <!-- PAGE 3: BLANK -->
   <section class="page page-3">
-    <svg viewBox="0 0 180 145" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+    <svg class="svg-logo" viewBox="0 0 180 145" xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns="http://www.w3.org/2000/svg">
       <defs>
         <style>
           .top {
