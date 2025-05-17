@@ -6,8 +6,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Sebastijan Grabar - Tour guide</title>
 
-  <!-- Load Pacifico from Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@400&family=Pacifico&display=swap"
+    rel="stylesheet">
 
   <style>
     /* RESET */
@@ -34,12 +36,23 @@
 
     /* HERO (PAGE 1) */
     .hero {
+      position: relative;
       color: #2D2D2D;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       padding: 0 1rem;
+    }
+
+    /* 2) style the small logo */
+    .hero .svg-logo {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      height: 4rem;
+      /* adjust as needed */
+      width: auto;
     }
 
     .hero h1 {
@@ -49,18 +62,19 @@
       text-align: center;
       /* centers even if it wraps */
       opacity: 0;
-      animation: fadeIn 1.5s forwards;
+      animation: fadeIn 1s forwards;
     }
 
     .hero h2 {
-      margin-top: .5rem;
+      margin-top: 2.5rem;
       font-size: .9rem;
-      font-weight: bold;
-      font-family: 'Helvetica';
       text-transform: uppercase;
       text-align: center;
       opacity: 0;
-      animation: fadeIn 1.5s .8s forwards;
+      animation: fadeIn 1s .3s forwards;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-family: "Lexend Giga", sans-serif;
     }
 
     @keyframes fadeIn {
@@ -193,6 +207,10 @@
       font-size: 1.2rem;
       color: #2D2D2D;
     }
+
+    .page-3 .svg-logo {
+      height: 12rem;
+    }
   </style>
 </head>
 
@@ -201,6 +219,28 @@
   <section class="page hero">
     <h1>Sebastijan Grabar</h1>
     <h2>Tour Guide</h2>
+
+    <!-- 3) duplicate the same SVG here -->
+    <svg class="svg-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 145">
+      <defs>
+        <style>
+          .top {
+            font-family: 'Pacifico', cursive;
+            font-size: 21px;
+          }
+        </style>
+        <path id="curveA" d="M20 50 C60 30,120 40,160 100" fill="none" />
+        <path id="curveB" d="M15 80 C60 60,120 70,160 150" fill="none" />
+      </defs>
+      <path d="M20 50 C60 30,120 40,160 100" fill="none" stroke="#ff6f00" stroke-width="4" stroke-dasharray="6 8" />
+      <text class="top">
+        <textPath fill="#2D2D2D" href="#curveB">
+          Lead&nbsp;the&nbsp;Way
+        </textPath>
+      </text>
+      <circle cx="160" cy="100" r="14" fill="#ff6f00" />
+      <circle cx="160" cy="100" r="5" fill="#ffffff" />
+    </svg>
   </section>
 
   <!-- PAGE 2: GALLERY -->
@@ -218,12 +258,12 @@
 
   <!-- PAGE 3: BLANK -->
   <section class="page page-3">
-    <svg xmlns="http://www.w3.org/2000/svg">
+    <svg class="svg-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 145">
       <defs>
         <style>
           .top {
             font-family: 'Pacifico', cursive;
-            font-size: 20px;
+            font-size: 21px;
           }
         </style>
 
@@ -231,7 +271,7 @@
         <path id="curveA" d="M20 50 C60 30,120 40,160 100" fill="none" />
 
         <!-- duplicate path shifted down 10px -->
-        <path id="curveB" d="M17 80 C60 60,120 70,160 130" fill="none" />
+        <path id="curveB" d="M15 80 C60 60,120 70,160 150" fill="none" />
       </defs>
 
       <path d="M20 50 C60 30,120 40,160 100" fill="none" stroke="#ff6f00" stroke-width="4" stroke-dasharray="6 8" />
