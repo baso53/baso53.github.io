@@ -301,13 +301,33 @@
   <!-- PAGE 2: GALLERY -->
   <section class="page">
     <div class="gallery">
-      <img loading="lazy" class="img-big" src="./assets/hq/me.jpg" alt="">
-      <img loading="lazy" class="img-c2-r1" src="./assets/hq/DSC05435-HDR.webp" alt="">
-      <img loading="lazy" class="img-c2-r2" src="./assets/hq/DSC05441-HDR.webp" alt="">
-      <img loading="lazy" class="img-c2-r3" src="./assets/hq/DSC05479-HDR.webp" alt="">
-      <img loading="lazy" class="img-c3-r1" src="./assets/hq/DSC05459-HDR.webp" alt="">
-      <img loading="lazy" class="img-c3-r2" src="./assets/hq/DSC05396-HDR.webp" alt="">
-      <img loading="lazy" class="img-c3-r3" src="./assets/hq/DSC05410-HDR.webp" alt="">
+      <img loading="lazy" id="img-1" class="img-big" src="./assets/lq/me.webp" alt="">
+      <img loading="lazy" id="img-2" class="img-c2-r1" src="./assets/lq/DSC05435-HDR.webp" alt="">
+      <img loading="lazy" id="img-3" class="img-c2-r2" src="./assets/lq/DSC05441-HDR.webp" alt="">
+      <img loading="lazy" id="img-4" class="img-c2-r3" src="./assets/lq/DSC05479-HDR.webp" alt="">
+      <img loading="lazy" id="img-5" class="img-c3-r1" src="./assets/lq/DSC05459-HDR.webp" alt="">
+      <img loading="lazy" id="img-6" class="img-c3-r2" src="./assets/lq/DSC05396-HDR.webp" alt="">
+      <img loading="lazy" id="img-7" class="img-c3-r3" src="./assets/lq/DSC05410-HDR.webp" alt="">
+
+      <script>
+        const highResImages = [
+          { id: 'img-1', src: './assets/hq/me.jpg' },
+          { id: 'img-2', src: './assets/hq/DSC05435-HDR.webp' },
+          { id: 'img-3', src: './assets/hq/DSC05441-HDR.webp' },
+          { id: 'img-4', src: './assets/hq/DSC05479-HDR.webp' },
+          { id: 'img-5', src: './assets/hq/DSC05459-HDR.webp' },
+          { id: 'img-6', src: './assets/hq/DSC05396-HDR.webp' },
+          { id: 'img-7', src: './assets/hq/DSC05410-HDR.webp' },
+        ];
+
+        highResImages.forEach(({ id, src }) => {
+          const preloader = new Image();
+          preloader.src = src;
+          preloader.onload = () => {
+            document.getElementById(id).src = src;
+          };
+        });
+      </script>
     </div>
   </section>
 
