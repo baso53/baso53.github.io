@@ -6,11 +6,6 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Sebastijan Grabar - Tour guide</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@400&family=Pacifico&display=swap"
-    rel="stylesheet">
-
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,6 +17,26 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0
+    }
+
+    /* Lexend Giga ASCII Only */
+    @font-face {
+      font-family: 'Lexend Giga';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(assets/lexend-giga.woff2) format('woff2');
+      unicode-range: U+0000-007F;
+    }
+
+    /* Pacifico ASCII Only */
+    @font-face {
+      font-family: 'Pacifico';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(assets/pacifico.woff2) format('woff2');
+      unicode-range: U+0000-007F;
     }
 
     html,
@@ -285,13 +300,13 @@
   <!-- PAGE 2: GALLERY -->
   <section class="page">
     <div class="gallery">
-      <img class="img-big" src="./assets/820ead1b2f7ee4d9f724e87a618e0bb5.jpg" alt="">
-      <img class="img-c2-r1" src="./assets/d84d74dc4dab09da16f1f3e4a6de8e1f.jpg" alt="">
-      <img class="img-c2-r2" src="./assets/5745815c7111fbcb32a5e3d9b49ce2fa.jpg" alt="">
-      <img class="img-c2-r3" src="./assets/6e7efaa3799456d67848d5e3745ee2c9.jpg" alt="">
-      <img class="img-c3-r1" src="./assets/386b5b26d6ac128252ea6b0f8af0dad4.jpg" alt="">
-      <img class="img-c3-r2" src="./assets/a43ad14906156c1c3339d8b7680d5e96.jpg" alt="">
-      <img class="img-c3-r3" src="./assets/35cdfb8c0d6739597e8061f70b44bb12.jpg" alt="">
+      <img loading="lazy" class="img-big" src="./assets/820ead1b2f7ee4d9f724e87a618e0bb5.jpg" alt="">
+      <img loading="lazy" class="img-c2-r1" src="./assets/d84d74dc4dab09da16f1f3e4a6de8e1f.jpg" alt="">
+      <img loading="lazy" class="img-c2-r2" src="./assets/5745815c7111fbcb32a5e3d9b49ce2fa.jpg" alt="">
+      <img loading="lazy" class="img-c2-r3" src="./assets/6e7efaa3799456d67848d5e3745ee2c9.jpg" alt="">
+      <img loading="lazy" class="img-c3-r1" src="./assets/386b5b26d6ac128252ea6b0f8af0dad4.jpg" alt="">
+      <img loading="lazy" class="img-c3-r2" src="./assets/a43ad14906156c1c3339d8b7680d5e96.jpg" alt="">
+      <img loading="lazy" class="img-c3-r3" src="./assets/35cdfb8c0d6739597e8061f70b44bb12.jpg" alt="">
     </div>
   </section>
 
