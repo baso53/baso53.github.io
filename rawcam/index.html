@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RAW Cam - Open Gate DNG RAW Video Camera App for iPhone</title>
+  <meta name="description" content="RAW Cam is an iPhone RAW video camera app for open-gate capture in DNG or MCRAW. Get manual focus and exposure, histogram, clipping indicators, Gyroflow support, and external SSD workflow.">
+  <meta name="keywords" content="RAW Cam, RAW video iPhone, Open Gate DNG, CinemaDNG iPhone, MCRAW, iPhone filmmaker app, manual focus video app, external SSD iPhone recording">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="Lead the way, vl. Sebastijan Grabar">
+  <link rel="canonical" href="https://leadtheway.hr/rawcam/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Lead The Way">
+  <meta property="og:title" content="RAW Cam - Open Gate DNG RAW Video Camera App for iPhone">
+  <meta property="og:description" content="Shoot open-gate RAW video on iPhone in DNG or MCRAW with manual controls, histogram and clipping tools, plus external storage support.">
+  <meta property="og:url" content="https://leadtheway.hr/rawcam/">
+  <meta property="og:image" content="https://leadtheway.hr/screenshots/IMG_0626.PNG">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="RAW Cam - Open Gate DNG RAW Video Camera App for iPhone">
+  <meta name="twitter:description" content="One-time purchase. No subscription. Capture true RAW video in DNG or MCRAW with pro controls and external storage workflow.">
+  <meta name="twitter:image" content="https://leadtheway.hr/screenshots/IMG_0626.PNG">
+
+  <link rel="apple-touch-icon" href="/screenshots/icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/screenshots/icon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/screenshots/icon.png">
+  <link rel="shortcut icon" href="/screenshots/icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "RAW Cam: Open Gate DNG Video",
+    "applicationCategory": "PhotoApplication",
+    "operatingSystem": "iOS 17.0 or later",
+    "url": "https://leadtheway.hr/rawcam/",
+    "downloadUrl": "https://apps.apple.com/us/app/raw-cam-open-gate-dng-video/id6755047834",
+    "image": "https://leadtheway.hr/screenshots/icon.png",
+    "description": "RAW Cam is an iPhone app for open-gate RAW video capture in DNG or MCRAW, with manual controls, histogram, clipping indicators, and external storage workflow.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Lead the way, vl. Sebastijan Grabar",
+      "url": "https://leadtheway.hr/"
+    },
+    "featureList": [
+      "Open gate and 16:9 capture modes",
+      "DNG and MCRAW recording formats",
+      "Manual ISO, shutter speed and focus",
+      "Histogram and clipping indicators",
+      "Gyroflow GCSV support",
+      "Internal and external storage workflow"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is RAW Cam a subscription app?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. RAW Cam is a one-time purchase with no subscription."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What recording formats does RAW Cam support?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "RAW Cam supports both DNG and MCRAW workflows, so you can choose the format that fits your post-production pipeline."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does RAW Cam support open-gate RAW video?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. RAW Cam supports open-gate capture, plus classic 16:9 modes in 4K and Full HD options."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I record to external storage?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. RAW Cam supports internal storage, user-selected folders, and external SSD workflows, depending on your setup."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does RAW Cam collect personal data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "RAW Cam states that it does not collect personal data. You can review full details in the privacy policy."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    @font-face {
+      font-family: "Lexend Giga";
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(../assets/lexend-giga.woff2) format("woff2");
+      unicode-range: U+0000-007F;
+    }
+
+    @font-face {
+      font-family: "Pacifico";
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(../assets/pacifico.woff2) format("woff2");
+      unicode-range: U+0000-007F;
+    }
+
+    :root {
+      --bg: #120e0b;
+      --bg-soft: #201710;
+      --card: rgba(255, 255, 255, 0.06);
+      --line: rgba(255, 255, 255, 0.15);
+      --text: #f5efe8;
+      --muted: #c9b6a2;
+      --brand: #ff9f2f;
+      --brand-strong: #ff7a21;
+      --ok: #9dd38f;
+      --container: 1120px;
+      --radius: 18px;
+      --shadow: 0 16px 45px rgba(0, 0, 0, 0.35);
+    }
+
+    html,
+    body {
+      min-height: 100%;
+      background: radial-gradient(1200px 700px at 20% -10%, #50311d 0%, transparent 70%),
+        radial-gradient(1000px 650px at 90% 10%, #402616 0%, transparent 68%),
+        linear-gradient(180deg, #1b140f 0%, #120e0b 36%, #0f0b08 100%);
+      color: var(--text);
+      font-family: "Lexend Giga", "Segoe UI", sans-serif;
+      line-height: 1.62;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .wrap {
+      width: min(100% - 2.25rem, var(--container));
+      margin: 0 auto;
+    }
+
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 70;
+      backdrop-filter: blur(12px);
+      background: rgba(16, 12, 9, 0.74);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .top-nav .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.9rem 0;
+    }
+
+    .brand-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-chip img {
+      width: 1.8rem;
+      height: 1.8rem;
+      border-radius: 0.45rem;
+      border: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-cta {
+      background: linear-gradient(140deg, var(--brand), var(--brand-strong));
+      color: #130c06;
+      padding: 0.64rem 0.95rem;
+      border-radius: 999px;
+      font-size: 0.64rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .hero {
+      padding: 5.2rem 0 2.8rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      margin-bottom: 1rem;
+      font-size: 0.67rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #ffd3a3;
+      border: 1px solid rgba(255, 214, 166, 0.36);
+      border-radius: 999px;
+      padding: 0.35rem 0.7rem;
+      background: rgba(255, 181, 92, 0.1);
+    }
+
+    .eyebrow::before {
+      content: "REC";
+      color: #1f140d;
+      background: #ffba61;
+      border-radius: 999px;
+      padding: 0.1rem 0.45rem;
+      font-size: 0.55rem;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: clamp(1.7rem, 4.15vw, 3.35rem);
+      line-height: 1.12;
+      margin-bottom: 1rem;
+      letter-spacing: 0.02em;
+    }
+
+    .hero p {
+      color: var(--muted);
+      margin-bottom: 1.35rem;
+      max-width: 60ch;
+      font-size: 0.78rem;
+    }
+
+    .hero p strong {
+      color: var(--text);
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-bottom: 1.15rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 0.72rem 1.15rem;
+      font-size: 0.65rem;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: transform 0.2s ease, opacity 0.2s ease, border-color 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      opacity: 0.95;
+    }
+
+    .btn-primary {
+      color: #1b120a;
+      background: linear-gradient(130deg, #ffc779, #ff9e31 55%, #ff7f25);
+      box-shadow: 0 12px 24px rgba(255, 144, 0, 0.35);
+    }
+
+    .btn-ghost {
+      border-color: rgba(255, 255, 255, 0.33);
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+
+    .hero-meta span {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 999px;
+      font-size: 0.62rem;
+      color: #ffe6c6;
+      padding: 0.35rem 0.7rem;
+    }
+
+    .hero-preview {
+      position: relative;
+      border: 1px solid rgba(255, 255, 255, 0.26);
+      border-radius: calc(var(--radius) + 4px);
+      overflow: hidden;
+      background: #000;
+      box-shadow: var(--shadow);
+      min-height: 370px;
+    }
+
+    .hero-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .section {
+      padding: 2.6rem 0;
+    }
+
+    h2 {
+      font-size: clamp(1.16rem, 2.45vw, 2rem);
+      margin-bottom: 0.55rem;
+      letter-spacing: 0.01em;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      font-size: 0.74rem;
+      margin-bottom: 1.4rem;
+      max-width: 70ch;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.85rem;
+    }
+
+    .feature-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1rem;
+      background: linear-gradient(160deg, rgba(255, 255, 255, 0.085), rgba(255, 255, 255, 0.03));
+      min-height: 160px;
+    }
+
+    .feature-card strong {
+      display: inline-block;
+      margin-bottom: 0.48rem;
+      color: #fff0dc;
+      font-size: 0.74rem;
+    }
+
+    .feature-card p {
+      color: var(--muted);
+      font-size: 0.67rem;
+    }
+
+    .feature-tag {
+      display: inline-flex;
+      margin-bottom: 0.5rem;
+      padding: 0.2rem 0.45rem;
+      border-radius: 0.45rem;
+      border: 1px solid rgba(255, 174, 87, 0.45);
+      background: rgba(255, 151, 46, 0.16);
+      color: #ffd9ab;
+      font-size: 0.54rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .workflow {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.85rem;
+    }
+
+    .step {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .step-index {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.45rem;
+      height: 1.45rem;
+      border-radius: 999px;
+      margin-bottom: 0.55rem;
+      font-size: 0.58rem;
+      background: #ffb75f;
+      color: #1a1208;
+      font-weight: 700;
+    }
+
+    .step h3 {
+      margin-bottom: 0.45rem;
+      font-size: 0.74rem;
+      color: #fff4e5;
+    }
+
+    .step p {
+      color: var(--muted);
+      font-size: 0.65rem;
+    }
+
+    .shot-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .shot-nav {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .shot-nav button {
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.08);
+      width: 2.1rem;
+      height: 2.1rem;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 0.78rem;
+      line-height: 1;
+    }
+
+    .shot-nav button:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .shot-reel {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(250px, 290px);
+      gap: 0.8rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 0.4rem;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255, 255, 255, 0.35) transparent;
+    }
+
+    .shot-reel::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .shot-reel::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.35);
+      border-radius: 999px;
+    }
+
+    .shot-card {
+      border: 1px solid var(--line);
+      border-radius: calc(var(--radius) - 2px);
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.05);
+      scroll-snap-align: start;
+      min-height: 430px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .shot-card img {
+      width: 100%;
+      height: 355px;
+      object-fit: cover;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .shot-copy {
+      padding: 0.72rem 0.7rem 0.8rem;
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .shot-copy strong {
+      font-size: 0.66rem;
+      color: #fff0dc;
+    }
+
+    .shot-copy span {
+      font-size: 0.59rem;
+      color: var(--muted);
+    }
+
+    .trust {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 1rem;
+      align-items: stretch;
+    }
+
+    .trust-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.1rem;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .trust-card ul {
+      list-style: none;
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    .trust-card li {
+      font-size: 0.66rem;
+      color: var(--muted);
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .trust-card li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 0.45rem;
+      height: 0.45rem;
+      border-radius: 999px;
+      background: var(--ok);
+      box-shadow: 0 0 0 4px rgba(157, 211, 143, 0.18);
+    }
+
+    .faq {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.05);
+      overflow: hidden;
+    }
+
+    .faq details {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 0.85rem 1rem;
+    }
+
+    .faq details:last-child {
+      border-bottom: 0;
+    }
+
+    .faq summary {
+      cursor: pointer;
+      list-style: none;
+      font-size: 0.67rem;
+      color: #fff1df;
+    }
+
+    .faq summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq p {
+      margin-top: 0.62rem;
+      color: var(--muted);
+      font-size: 0.62rem;
+      max-width: 75ch;
+    }
+
+    .final-cta {
+      text-align: center;
+      border: 1px solid rgba(255, 170, 79, 0.35);
+      border-radius: var(--radius);
+      background: radial-gradient(700px 260px at 50% -20%, rgba(255, 177, 93, 0.2), rgba(255, 255, 255, 0.04));
+      padding: 1.5rem 1rem;
+    }
+
+    .final-cta h2 {
+      margin-bottom: 0.5rem;
+    }
+
+    .final-cta p {
+      color: var(--muted);
+      font-size: 0.67rem;
+      margin-bottom: 0.9rem;
+    }
+
+    footer {
+      padding: 2rem 0 2rem;
+      color: #b8a58f;
+      font-size: 0.57rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 0.55rem;
+    }
+
+    .footer-links a:hover {
+      color: #ffe1b8;
+    }
+
+    .dev-note {
+      margin-top: 0.95rem;
+      color: #d5b48e;
+      font-size: 0.55rem;
+      opacity: 0.85;
+      text-align: center;
+    }
+
+    .mark {
+      font-family: "Pacifico", cursive;
+      letter-spacing: 0;
+      color: #ffc987;
+      margin-left: 0.25rem;
+      font-size: 1.08em;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid,
+      .trust {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-grid,
+      .workflow {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
+      .top-nav .wrap {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .hero {
+        padding-top: 3.8rem;
+      }
+
+      .shot-header {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .feature-grid,
+      .workflow {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-preview {
+        min-height: 320px;
+      }
+
+      .shot-card img {
+        height: 330px;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="top-nav">
+    <div class="wrap">
+      <a class="brand-chip" href="/rawcam/" aria-label="RAW Cam page">
+        <img src="../screenshots/webp/icon.webp" width="48" height="48" alt="RAW Cam app icon">
+        <span>RAW Cam<span class="mark">Open Gate</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Section navigation">
+        <a href="#features">Features</a>
+        <a href="#screenshots">Screenshots</a>
+        <a href="#faq">FAQ</a>
+        <a href="/rawcam/privacypolicy/">Privacy</a>
+      </nav>
+      <a class="nav-cta" href="https://apps.apple.com/us/app/raw-cam-open-gate-dng-video/id6755047834" target="_blank" rel="noopener">Buy RAW Cam</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">RAW Video for iPhone</p>
+          <h1>RAW Cam captures open-gate <br> DNG and MCRAW video <br> with real on-set control.</h1>
+          <p>
+            RAW Cam is built for filmmakers who want <strong>maximum image quality</strong> from iPhone.
+            Shoot true RAW video, dial in manual exposure and focus, watch clipping and histogram feedback,
+            and move media fast to your editing workflow.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://apps.apple.com/us/app/raw-cam-open-gate-dng-video/id6755047834" target="_blank" rel="noopener">Get RAW Cam on the App Store</a>
+          </div>
+          <div class="hero-meta" aria-label="Key app highlights">
+            <span>One-time purchase</span>
+            <span>No subscriptions</span>
+            <span>iOS 17.0 or later</span>
+            <span>DNG + MCRAW</span>
+            <span>Open Gate + 4K + Full HD</span>
+            <span>18 / 24 / 25 / 30 fps</span>
+          </div>
+        </div>
+
+        <div class="hero-preview" aria-hidden="true">
+          <img src="../screenshots/webp/IMG_0626.webp" width="1170" height="2532" fetchpriority="high" alt="RAW Cam camera interface with recording timer, grid and live controls">
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="wrap">
+        <h2>Why filmmakers choose RAW Cam</h2>
+        <p class="section-intro">
+          RAW Cam is designed around image quality and speed on set.
+          It gives you direct control when you shoot and a smoother path into post-production.
+        </p>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <span class="feature-tag">Image</span>
+            <strong>True RAW capture in DNG or MCRAW</strong>
+            <p>Record sensor-grade video data for grading flexibility, highlight recovery workflows, and professional finishing pipelines.</p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-tag">Framing</span>
+            <strong>Open gate plus classic 16:9 modes</strong>
+            <p>Shoot full sensor open gate, 4K, or Full HD with optional half resolution depending on your speed and storage requirements.</p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-tag">Control</span>
+            <strong>Manual ISO, shutter speed and focus</strong>
+            <p>Take control with manual settings, tap focus before rolling, and adjust focus or exposure smoothly while recording.</p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-tag">Monitoring</span>
+            <strong>Histogram, clipping and horizon tools</strong>
+            <p>Evaluate exposure and camera balance on-device with histogram overlays, clipping indicators, and an optional horizon indicator.</p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-tag">Workflow</span>
+            <strong>Internal and external storage workflow</strong>
+            <p>Save to internal gallery, user-selected folders, or external SSD and quickly hand footage off through AirDrop or file sharing.</p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-tag">Stabilization</span>
+            <strong>Stabilization toggle and Gyroflow support</strong>
+            <p>Use built-in stabilization controls or record Gyroflow GCSV companion data for stabilization and post work in compatible tools.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="screenshots">
+      <div class="wrap">
+        <div class="shot-header">
+          <div>
+            <h2>RAW Cam interface screenshots</h2>
+            <p class="section-intro">Browse the camera UI, controls, and gallery flow exactly as they appear in the app.</p>
+          </div>
+          <div class="shot-nav" aria-label="Screenshot navigation">
+            <button type="button" data-reel-prev aria-label="Scroll screenshots left">&#8592;</button>
+            <button type="button" data-reel-next aria-label="Scroll screenshots right">&#8594;</button>
+          </div>
+        </div>
+
+        <div class="shot-reel" data-shot-reel>
+          <figure class="shot-card">
+            <img src="../screenshots/webp/IMG_0626.webp" width="1170" height="2532" loading="lazy" decoding="async" alt="RAW Cam recording screen with open gate frame and live camera controls">
+            <figcaption class="shot-copy">
+              <strong>Recording view</strong>
+              <span>Main camera interface with timer, framing grid, and quick-access controls.</span>
+            </figcaption>
+          </figure>
+
+          <figure class="shot-card">
+            <img src="../screenshots/webp/IMG_0645.webp" width="1170" height="2532" loading="lazy" decoding="async" alt="RAW Cam open gate mode indicator on mountain landscape scene">
+            <figcaption class="shot-copy">
+              <strong>Open gate capture mode</strong>
+              <span>Full sensor framing option for maximum flexibility in post.</span>
+            </figcaption>
+          </figure>
+
+          <figure class="shot-card">
+            <img src="../screenshots/webp/IMG_0696.webp" width="1170" height="2532" loading="lazy" decoding="async" alt="RAW Cam manual focus panel with AF and MF controls and focus distance slider">
+            <figcaption class="shot-copy">
+              <strong>Focus controls</strong>
+              <span>Switch between AF/Tap and manual focus with a precise distance slider.</span>
+            </figcaption>
+          </figure>
+
+          <figure class="shot-card">
+            <img src="../screenshots/webp/IMG_1244.webp" width="1170" height="2532" loading="lazy" decoding="async" alt="RAW Cam manual exposure panel showing ISO and shutter speed sliders">
+            <figcaption class="shot-copy">
+              <strong>Manual exposure</strong>
+              <span>Control ISO, shutter speed, and exposure memory per shot setup.</span>
+            </figcaption>
+          </figure>
+
+          <figure class="shot-card">
+            <img src="../screenshots/webp/IMG_1218.webp" width="1170" height="2532" loading="lazy" decoding="async" alt="RAW Cam camera controls panel with histogram toggle, frame rate selector and lens calibration">
+            <figcaption class="shot-copy">
+              <strong>Monitoring and frame rate</strong>
+              <span>Toggle histogram and set 18/24/25/30 fps directly from the controls panel.</span>
+            </figcaption>
+          </figure>
+
+          <figure class="shot-card">
+            <img src="../screenshots/webp/IMG_1210.webp" width="1170" height="2532" loading="lazy" decoding="async" alt="RAW Cam overlay showing histogram and storage indicator during sunset scene">
+            <figcaption class="shot-copy">
+              <strong>Live exposure checks</strong>
+              <span>Use histogram and clipping readouts while watching storage status.</span>
+            </figcaption>
+          </figure>
+
+          <figure class="shot-card">
+            <img src="../screenshots/webp/IMG_0801.webp" width="1170" height="2532" loading="lazy" decoding="async" alt="RAW Cam capture type panel with full open gate and 4K mode selection">
+            <figcaption class="shot-copy">
+              <strong>Capture format switcher</strong>
+              <span>Toggle between Full Open Gate and 4K, with half-resolution option.</span>
+            </figcaption>
+          </figure>
+
+          <figure class="shot-card">
+            <img src="../screenshots/webp/IMG_0682.webp" width="1170" height="2532" loading="lazy" decoding="async" alt="RAW Cam gallery view listing recorded MCRAW files with resolution and duration">
+            <figcaption class="shot-copy">
+              <strong>Built-in gallery</strong>
+              <span>Review, share, and manage recorded media from inside the app.</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2>Built for practical on-set workflow</h2>
+        <p class="section-intro">RAW Cam helps you move from capture to edit with fewer workarounds and clearer camera feedback.</p>
+
+        <div class="workflow">
+          <article class="step">
+            <span class="step-index">1</span>
+            <h3>Set your shot fast</h3>
+            <p>Pick open gate or 16:9 mode, choose frame rate, and dial manual or auto controls based on your scene.</p>
+          </article>
+
+          <article class="step">
+            <span class="step-index">2</span>
+            <h3>Monitor while recording</h3>
+            <p>Use live histogram, clipping data, focus tools, and horizon cues to stay in control during the take.</p>
+          </article>
+
+          <article class="step">
+            <span class="step-index">3</span>
+            <h3>Handoff to post production</h3>
+            <p>Keep footage internal or external, then export through AirDrop or file sharing and continue in your grading pipeline.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="wrap trust">
+        <article class="trust-card">
+          <h2>What you get with RAW Cam</h2>
+          <p class="section-intro">Core capabilities based on the current App Store listing and active app features.</p>
+          <ul>
+            <li>One-time purchase model with no subscription requirement.</li>
+            <li>DNG and MCRAW RAW video workflows for grading and finishing.</li>
+            <li>Open gate, 4K and Full HD capture paths with multiple frame-rate options.</li>
+            <li>Manual focus and exposure controls including tap-based setup before recording.</li>
+            <li>Internal plus external storage options with in-app gallery handling.</li>
+            <li>App privacy declaration: no data collection at all!</li>
+          </ul>
+        </article>
+
+        <article class="faq" aria-label="Frequently asked questions">
+          <details open>
+            <summary>Is RAW Cam a one-time purchase or a subscription?</summary>
+            <p>RAW Cam is offered as a one-time purchase on the App Store. The current listing states there is no subscription model.</p>
+          </details>
+          <details>
+            <summary>Who is RAW Cam for?</summary>
+            <p>RAW Cam is made for filmmakers and creators who want the highest-quality RAW video an iPhone can provide, with more direct camera control during capture.</p>
+          </details>
+          <details>
+            <summary>Can I shoot open gate RAW video and still choose classic framing?</summary>
+            <p>Yes. RAW Cam supports open gate, and also provides classic 16:9 capture options including 4K and Full HD style workflows.</p>
+          </details>
+          <details>
+            <summary>Does RAW Cam work with external storage and editing handoff?</summary>
+            <p>Yes. You can record to internal or external locations, then move files through AirDrop or sharing tools depending on your setup.</p>
+          </details>
+          <details>
+            <summary>Where can I verify privacy details?</summary>
+            <p>The full policy is published at <a href="/rawcam/privacypolicy/">leadtheway.hr/rawcam/privacypolicy/</a>. The app listing also indicates no data collection.</p>
+          </details>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="final-cta">
+          <h2>Get RAW Cam for iPhone</h2>
+          <p>Capture true open-gate RAW video, keep creative control, and move faster from set to grade.</p>
+          <a class="btn btn-primary" href="https://apps.apple.com/us/app/raw-cam-open-gate-dng-video/id6755047834" target="_blank" rel="noopener">Buy RAW Cam on the App Store</a>
+          <p class="dev-note">US App Store snapshot on March 26, 2026: 4.7/5 from 17 ratings.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-links">
+        <a href="https://apps.apple.com/us/app/raw-cam-open-gate-dng-video/id6755047834" target="_blank" rel="noopener">App Store</a>
+        <a href="/rawcam/privacypolicy/">Privacy Policy</a>
+        <a href="/">Lead The Way</a>
+        <a href="mailto:info@leadtheway.hr">Contact</a>
+      </div>
+      <p style="text-align:center;">Lead the way, vl. Sebastijan Grabar - Zagreb, Croatia</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var reel = document.querySelector('[data-shot-reel]');
+      var prev = document.querySelector('[data-reel-prev]');
+      var next = document.querySelector('[data-reel-next]');
+
+      if (!reel || !prev || !next) {
+        return;
+      }
+
+      function move(direction) {
+        var card = reel.querySelector('.shot-card');
+        var step = card ? card.getBoundingClientRect().width + 12 : 300;
+        reel.scrollBy({ left: direction * step, behavior: 'smooth' });
+      }
+
+      prev.addEventListener('click', function () {
+        move(-1);
+      });
+
+      next.addEventListener('click', function () {
+        move(1);
+      });
+    })();
+  </script>
+</body>
+
+</html>
