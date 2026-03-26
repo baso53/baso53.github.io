@@ -352,6 +352,10 @@
       padding: 2.6rem 0;
     }
 
+    .section[id] {
+      scroll-margin-top: 5.6rem;
+    }
+
     h2 {
       font-size: clamp(1.16rem, 2.45vw, 2rem);
       margin-bottom: 0.55rem;
@@ -505,8 +509,9 @@
 
     .shot-card img {
       width: 100%;
-      height: 355px;
-      object-fit: cover;
+      height: auto;
+      object-fit: contain;
+      display: block;
       border-bottom: 1px solid var(--line);
     }
 
@@ -664,6 +669,10 @@
     }
 
     @media (max-width: 760px) {
+      .section[id] {
+        scroll-margin-top: 8.8rem;
+      }
+
       .top-nav .wrap {
         align-items: flex-start;
         flex-direction: column;
@@ -690,10 +699,6 @@
 
       .hero-preview {
         min-height: 320px;
-      }
-
-      .shot-card img {
-        height: 330px;
       }
 
       .nav-cta {
