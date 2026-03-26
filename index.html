@@ -6,7 +6,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description"
     content="Lead The Way - Development company based in Zagreb. Creating innovative digital solutions and web development services.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <title>Lead The Way - Development</title>
+  <link rel="canonical" href="https://leadtheway.hr/">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -96,6 +99,27 @@
       font-optical-sizing: auto;
       font-weight: 400;
       font-family: "Lexend Giga", sans-serif;
+    }
+
+    .hero .products-link {
+      display: inline-block;
+      margin-top: 1.6rem;
+      padding: 0.7rem 1rem;
+      border-radius: 999px;
+      background: #ff6f00;
+      color: #fff;
+      font-family: "Lexend Giga", sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      text-decoration: none;
+      opacity: 0;
+      animation: fadeIn 1s .45s forwards;
+      transition: filter .2s ease;
+    }
+
+    .hero .products-link:hover {
+      filter: brightness(0.92);
     }
 
     @keyframes fadeIn {
@@ -270,6 +294,7 @@
   <section class="page hero">
     <h1>Lead The Way</h1>
     <h2>Your Development Partner in Zagreb</h2>
+    <a class="products-link" href="/rawcam/">Explore RAW Cam</a>
 
     <!-- 3) duplicate the same SVG here -->
     <svg class="svg-logo" viewBox="0 0 180 145" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -439,6 +464,10 @@
 
     <a href="mailto:info@leadtheway.hr" target="_blank" rel="noopener">
       CONTACT US →
+    </a>
+
+    <a href="/rawcam/">
+      RAW CAM →
     </a>
 
     <a href="https://www.instagram.com/footsteps_of_zagreb" target="_blank" rel="noopener">
